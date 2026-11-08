@@ -4,6 +4,14 @@
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-11-09
+
+### Changed
+
+- Publish the executable and window icon fixes from local version 0.1.1.
+- Limit release entry points to new version tags and manual runs, retaining CTest, manifest, bilingual documentation and package validation.
+- Preserve the existing local tags and use 0.1.2 for the first formal release.
+
 ## [0.1.1] - 2026-11-09
 
 ### Fixed

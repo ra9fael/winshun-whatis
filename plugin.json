@@ -3,7 +3,7 @@
   "manifest": 1,
   "id": "ra9fael.whatis",
   "name": {"zh": "这是什么", "en": "What Is This"},
-  "version": "0.1.1",
+  "version": "0.1.2",
   "minWinShun": "0.22.0",
   "description": {
     "zh": "指向一个窗口，找到创建它的进程、EXE 路径与 PID；可复制路径、定位文件和查看窗口信息",
