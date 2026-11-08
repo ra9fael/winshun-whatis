@@ -4,11 +4,6 @@
 
 ## [Unreleased]
 
-### Fixed
-
-- Explicitly load the embedded large and small window icons for the taskbar and Alt+Tab. The custom caption uses the same icon and updates with DPI and UI size.
-- Include icon resources and a window icon regression check in development packages, covering the window assignment as well as embedded resources.
-
 ## [0.1.1] - 2026-11-09
 
 ### Fixed
