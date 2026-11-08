@@ -1,11 +1,9 @@
-# Repository conventions
+# 仓库约定
 
-Use English Angular commit messages: `type(scope): imperative English summary`.
-Use English bodies and `BREAKING CHANGE:` for breaking changes. User documentation may be bilingual.
+[English](AGENTS.en.md)
 
-Public GitHub Actions entry points are new version tag pushes and `workflow_dispatch` only.
-Never add branch pushes, pull requests, schedules or other automatic triggers.
-Check `github.event.created && !github.event.deleted` before tag jobs run.
-Manual verification accepts a source ref and defaults `publish` to false; publishing requires an existing matching version tag.
-Preserve all existing tests, variant identity checks and pinned Qt/host dependencies.
-Only the publish job may request `contents: write`. Never overwrite existing release assets.
+提交标题和正文采用英文 Angular 格式：`type(scope): imperative English summary`，破坏性变更使用 `BREAKING CHANGE:` 正文。
+
+Actions 公开入口只允许新版本 tag 推送与 `workflow_dispatch`，不得添加分支 push、PR 或定时触发。tag 任务必须检查 `github.event.created && !github.event.deleted`。
+
+手动验证接受源码 ref，`publish` 默认为 false；发布要求已有且匹配的版本 tag。保留全部测试与清单、文档、包验证。仅发布任务拥有 `contents: write`，不得覆盖已有 Release 资产。

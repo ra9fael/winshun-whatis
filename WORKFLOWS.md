@@ -1,9 +1,11 @@
-# Build and release
+# 构建与发布
 
-Push a new version tag to test, package and publish automatically. Updating or deleting an existing tag skips the pipeline. Branch pushes and pull requests do not run Actions.
+[English](WORKFLOWS.en.md)
 
-For verification, run `release.yml` manually with `publish=false` (the default) and `ref` set to the source branch or SHA. The artifact is built once from the resolved SHA and includes a wsplugin and its SHA-256. All existing CTest suites run; project-specific validation remains enabled.
+推送新的 `vX.Y.Z` 标签会构建、测试、打包并发布；修改或删除已有标签不会构建。分支 push 和 PR 不触发 Actions。
 
-For manual publication, set `ref` to an existing version tag and `publish=true`. Its version, changelog, variant and branch ancestry must match. Use `vX.Y.Z` for single-variant plugins, `gdi-vX.Y.Z` / `qml-vX.Y.Z` for BinaryLab, and `gdi/vX.Y.Z` / `qml/vX.Y.Z` for EnvHosts. The tag is checked again before publishing the same verified artifact. Existing releases are never overwritten; a rerun reports that a release already exists.
+手动运行 `release.yml`，设置源码 `ref`，保持 `publish=false`，即可验证并下载 artifact。默认不会发布。发布时必须将 `ref` 设为已有版本标签并启用 `publish=true`，版本、变更日志和分支归属均须匹配。
 
-Commit subjects and bodies must be English Angular style, for example `ci(release): restrict workflows to tags and manual runs`. The selected source commit is checked; unrelated historical commits are not rewritten.
+流程只构建一次，执行原有 CTest、清单 schema、双语文档、PE、包内容与 SHA-256 校验后，发布同一份产物。发布前再次检查标签对应的提交；已有 Release 会明确报错，绝不覆盖资产。
+
+提交采用英文 Angular 格式；只校验当前待发布提交，不改写无关历史。
