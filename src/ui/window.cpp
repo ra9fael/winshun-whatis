@@ -190,6 +190,7 @@ void Window::clearGraphics() {
     m_font = m_large = m_small = m_heading = m_mono = nullptr; m_background = m_panel = m_soft = nullptr;
 }
 void Window::applyLook() {
+    updateIcons();
     if (!m_card) return;
     clearGraphics();
     const auto font=[this](int size,int weight,const wchar_t* family){return CreateFontW(-px(size),0,0,0,weight,FALSE,FALSE,FALSE,DEFAULT_CHARSET,OUT_DEFAULT_PRECIS,CLIP_DEFAULT_PRECIS,CLEARTYPE_QUALITY,DEFAULT_PITCH,family);};
@@ -430,7 +431,12 @@ void Window::drawCard(HDC dc) {
     const auto box=[this](int x,int y,int w,int h){return Gdiplus::RectF(static_cast<float>(px(x)),static_cast<float>(px(y)),static_cast<float>(px(w)),static_cast<float>(px(h)));};
     Gdiplus::Pen divider(ink(blend(m_look.background,m_look.border,65)),1);
     g.DrawLine(&divider,static_cast<float>(px(24)),static_cast<float>(px(52)),static_cast<float>(px(456)),static_cast<float>(px(52)));
-    glyph(g,Pick,static_cast<float>(px(24)),static_cast<float>(px(18)),static_cast<float>(px(19)),m_look.accent);
+    if(m_captionIcon) {
+        // Finish GDI+ drawing before painting the embedded icon with GDI.
+        const HDC iconDC=g.GetHDC();
+        DrawIconEx(iconDC,px(24),px(17),m_captionIcon,px(20),px(20),0,nullptr,DI_NORMAL);
+        g.ReleaseHDC(iconDC);
+    } else glyph(g,Pick,static_cast<float>(px(24)),static_cast<float>(px(18)),static_cast<float>(px(19)),m_look.accent);
     const bool ready=m_selection.locked&&m_selection.phase!=Phase::Resolving;
     const int radius=m_look.rounded?std::max(6,m_look.radius):0;
     if(ready) {
@@ -575,6 +581,27 @@ LRESULT Window::message(HWND hwnd,UINT msg,WPARAM w,LPARAM l) {
     }
     return DefWindowProcW(hwnd,msg,w,l);
 }
+void Window::updateIcons() {
+    if(!m_card)return;
+    const HINSTANCE instance=GetModuleHandleW(nullptr);
+    const auto load=[instance](int width,int height) {
+        // IDI_ICON1 is a named resource, not the numeric resource ID 1.
+        // Own each size separately so DPI changes can replace and release it.
+        return static_cast<HICON>(LoadImageW(instance,L"IDI_ICON1",IMAGE_ICON,width,height,0));
+    };
+    const auto replace=[this](HICON& current,HICON next,WPARAM kind) {
+        if(!next)return;
+        SendMessageW(m_card,WM_SETICON,kind,reinterpret_cast<LPARAM>(next));
+        if(current)DestroyIcon(current);
+        current=next;
+    };
+    replace(m_icon,load(GetSystemMetricsForDpi(SM_CXICON,m_dpi),GetSystemMetricsForDpi(SM_CYICON,m_dpi)),ICON_BIG);
+    replace(m_smallIcon,load(GetSystemMetricsForDpi(SM_CXSMICON,m_dpi),GetSystemMetricsForDpi(SM_CYSMICON,m_dpi)),ICON_SMALL);
+    if(HICON next=load(px(20),px(20))) {
+        if(m_captionIcon)DestroyIcon(m_captionIcon);
+        m_captionIcon=next;
+    }
+}
 void Window::run() {
     Gdiplus::GdiplusStartupInput graphics;
     if(Gdiplus::GdiplusStartup(&m_gdiplus,&graphics,nullptr)!=Gdiplus::Ok){const std::lock_guard lock(m_mutex);m_ready=true;m_readyCondition.notify_all();return;}
@@ -612,6 +639,10 @@ void Window::run() {
     if(m_card)DestroyWindow(m_card);
     m_card=nullptr;
     if(controller)DestroyWindow(controller);
+    for(HICON* icon:{&m_icon,&m_smallIcon,&m_captionIcon}) {
+        if(*icon)DestroyIcon(*icon);
+        *icon=nullptr;
+    }
     clearGraphics();
     Gdiplus::GdiplusShutdown(m_gdiplus);m_gdiplus=0;
 }

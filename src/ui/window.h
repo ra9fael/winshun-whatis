@@ -51,6 +51,7 @@ private:
     void updateCard();
     void layout();
     void applyLook();
+    void updateIcons();
     void clearGraphics();
     void drawButton(const DRAWITEMSTRUCT& item);
     void drawCard(HDC dc);
@@ -76,6 +77,7 @@ private:
     std::optional<Result> m_snapshot;
     bool m_ready = false, m_stopping = false, m_workerStop = false;
     HWND m_controller = nullptr, m_card = nullptr, m_hint = nullptr;
+    HICON m_icon = nullptr, m_smallIcon = nullptr, m_captionIcon = nullptr;
     std::vector<HWND> m_shields;
     HWND m_edges[4]{};
     std::atomic<bool> m_picking{false};
