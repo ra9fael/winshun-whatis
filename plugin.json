@@ -1,0 +1,25 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LingCore/WinShun-plugins/main/schema/plugin.schema.json",
+  "manifest": 1,
+  "id": "ra9fael.whatis",
+  "name": {"zh": "这是什么", "en": "What Is This"},
+  "version": "0.1.0",
+  "minWinShun": "0.22.0",
+  "description": {
+    "zh": "指向一个窗口，找到创建它的进程、EXE 路径与 PID；可复制路径、定位文件和查看窗口信息",
+    "en": "Point at a window to identify its process, EXE path and PID; copy the path, reveal the file and inspect window details"
+  },
+  "author": "ra9fael",
+  "homepage": "https://github.com/ra9fael/winshun-whatis",
+  "license": "MIT",
+  "runtime": {"mode": "resident", "program": "whatis.exe", "sandbox": "normal", "start": "lazy", "idleExitSec": 0, "timeoutMs": 1500, "memoryMB": 64, "encoding": "utf-8"},
+  "permissions": ["ui", "clipboard:write", "winshun:open"],
+  "commands": [{
+    "id": "whatis",
+    "keyword": ["whatis", "这是什么", "窗口是谁"],
+    "title": {"zh": "这是什么", "en": "What Is This"},
+    "icon": "glyph:U+E71E",
+    "hint": {"zh": "Enter 选取窗口；移动预览、单击锁定，Esc 取消", "en": "Enter to pick a window; hover to preview, click to lock, Esc to cancel"},
+    "actions": [{"id": "pick", "title": {"zh": "选取窗口", "en": "Pick a window"}, "key": "Enter"}]
+  }]
+}
