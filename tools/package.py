@@ -15,7 +15,7 @@ import zipfile
 
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 DEV_FILES=[
-    'plugin.json','whatis.exe','CMakeLists.txt','winshun.h','LICENSE',
+    'plugin.json','whatis.exe','CMakeLists.txt','winshun.h','LICENSE','app.ico','whatis.rc',
     'README.md','README.en.md','CHANGELOG.md','CHANGELOG.en.md',
     'THIRD_PARTY.md','THIRD_PARTY.en.md',
     'docs/implementation.md','docs/implementation.en.md','docs/validation.md','docs/validation.en.md',
@@ -24,7 +24,7 @@ DEV_FILES=[
     'src/main.cpp','src/core/selection.h','src/platform/window_probe.h','src/platform/window_probe.cpp',
     'src/ui/window.h','src/ui/window.cpp',
     'tests/core_tests.cpp','tests/native_tests.cpp','tests/fixture.cpp',
-    'tests/integration.py','tests/host_smoke.py','tests/visual_states.py','tests/validate.py','tools/package.py',
+    'tests/integration.py','tests/host_smoke.py','tests/visual_states.py','tests/window_icons.py','tests/validate.py','tools/package.py',
 ]
 
 def version_notes(filename, version):
@@ -76,8 +76,8 @@ def main():
     name=f"{m['id']}-{version}{'-dev' if args.dev else ''}.wsplugin"
     (args.out/name).write_bytes(data)
     (args.out/(name+'.sha256')).write_text(f'{digest}  {name}\n',encoding='ascii')
-    notes=f'# 这是什么 {version} 开发包\n\n[English](release-notes.en.md)\n\n本地开发预览，未正式发布。安装后在 Win顺输入 `whatis` 并按 Enter。\n\nCTest 2/2、31 项集成和 12 项真实宿主检查通过。物理输入隔离、混合 DPI、剪贴板及 Explorer 成功路径尚待人工验收。\n\n权限：`ui`、`clipboard:write`、`winshun:open`。\n\n文件：`{name}`\n\nSHA256：`{digest}`\n'
-    english=f'# What Is This {version} development package\n\n[中文](release-notes.md)\n\nLocal development preview, not a published release. After installation, enter `whatis` in Winshun and press Enter.\n\nCTest 2/2, 31 integration checks and 12 real-host checks passed. Physical input isolation, mixed DPI, clipboard and successful Explorer actions await manual acceptance.\n\nPermissions: `ui`, `clipboard:write`, `winshun:open`.\n\nFile: `{name}`\n\nSHA256: `{digest}`\n'
+    notes=f'# 这是什么 {version} 开发包\n\n[English](release-notes.en.md)\n\n本地开发预览，未正式发布。安装后在 Win顺输入 `whatis` 并按 Enter；更新后需重启插件进程。\n\n开发包不代表已通过完整发布验收。请查看包内 docs/validation.md 中最新记录的验证结果、失败项与未测边界。\n\n权限：`ui`、`clipboard:write`、`winshun:open`。\n\n文件：`{name}`\n\nSHA256：`{digest}`\n'
+    english=f'# What Is This {version} development package\n\n[中文](release-notes.md)\n\nLocal development preview, not a published release. After installation, enter `whatis` in Winshun and press Enter; restart the plugin process after updating.\n\nA development package does not imply full release acceptance. See the latest results, failures and coverage limits in the included docs/validation.en.md.\n\nPermissions: `ui`, `clipboard:write`, `winshun:open`.\n\nFile: `{name}`\n\nSHA256: `{digest}`\n'
     if not args.dev:
         notes=f'# 这是什么 {version}\n\n[English](release-notes.en.md)\n\n'+version_notes('CHANGELOG.md',version)+f'\n\n文件：`{name}`\n\nSHA256：`{digest}`\n'
         english=f'# What Is This {version}\n\n[中文](release-notes.md)\n\n'+version_notes('CHANGELOG.en.md',version)+f'\n\nFile: `{name}`\n\nSHA256: `{digest}`\n'

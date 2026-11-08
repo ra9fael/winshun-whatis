@@ -6,6 +6,7 @@ Winshun with --probe-runtime --live. Only processes created here are stopped.
 from __future__ import annotations
 import argparse
 import ctypes as C
+from datetime import datetime, timezone
 import hashlib
 import json
 import os
@@ -15,6 +16,7 @@ import subprocess
 import tempfile
 import time
 import integration as t
+from window_icons import check_window_icons
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
@@ -23,6 +25,7 @@ def main():
     p.add_argument('--host',type=pathlib.Path,default=ROOT.parent/'WinShun/build/debug/WinShun.exe')
     p.add_argument('--out',type=pathlib.Path,default=ROOT/'build/host-smoke')
     p.add_argument('--qt',type=pathlib.Path,help='Qt kit root when the host has not been deployed')
+    p.add_argument('--icons-only',action='store_true',help='Verify window icons and shutdown without selecting another window')
     args=p.parse_args();args.out=args.out.resolve();args.host=args.host.resolve()
     if args.qt:args.qt=args.qt.resolve()
     args.out.mkdir(parents=True,exist_ok=True)
@@ -34,7 +37,7 @@ def main():
     shutil.copy2(ROOT/'build/whatis_fixture.exe',target)
     original=t.W.POINT();t.U.GetCursorPos(C.byref(original));foreground=t.U.GetForegroundWindow()
     host=fixture=None;plugin_pid=None;plugin_handle=None;card=None;profile=None
-    log=(args.out/'process.log').open('wb');report={'date':'2026-11-08','checks':t.checks}
+    log=(args.out/'process.log').open('wb');report={'time_utc':datetime.now(timezone.utc).isoformat(),'checks':t.checks}
     def commands(*lines):
         ack=args.out/'ack.txt';previous=ack.read_text() if ack.exists() else ''
         temp=args.out/'cmd.pending';temp.write_text('\n'.join(lines)+'\n',encoding='utf8');temp.replace(args.out/'cmd.txt')
@@ -93,6 +96,22 @@ def main():
             t.U.PostMessageW(shield,0x100,0x1B,0)
             t.wait(lambda:t.find(plugin_pid,'WhatIsInput') is None)
         card=t.wait(lambda:t.find(plugin_pid,'这是什么'))
+        check_window_icons(card, 'real host window')
+        if args.icons_only:
+            t.screenshot(card,args.out/'host-icons.png')
+            report.update(host=str(args.host),plugin_pid=plugin_pid,profile=str(profile),
+                sha256=hashlib.sha256((ROOT/'whatis.exe').read_bytes()).hexdigest(),
+                scope='Window icon assignment, pixels, caption capture and lifecycle',
+                unverified=['Physical taskbar/Alt+Tab interaction','Window selection and unrelated actions'])
+            (args.out/'stop').touch();host.wait(timeout=15)
+            report['host_exit_code']=host.returncode
+            t.check('Isolated production host exits successfully',host.returncode==0,host.returncode)
+            t.wait(lambda:not t.windows(plugin_pid,False))
+            t.check('Host shutdown exits the plugin and removes its windows',t.K.WaitForSingleObject(plugin_handle,3000)==0)
+            clean_profile()
+            t.check('Task-owned temporary profile is cleaned after host shutdown',not profile.exists())
+            print(f'PASS {len(t.checks)} real-host icon checks')
+            return
         t.U.SetCursorPos(*t.center(info['child']))
         t.command(card,100);shield=t.wait(lambda:t.find(plugin_pid,'WhatIsInput'))
         t.U.PostMessageW(shield,0x201,1,0);t.U.PostMessageW(shield,0x202,0,0)

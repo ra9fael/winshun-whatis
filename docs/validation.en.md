@@ -2,6 +2,16 @@
 
 [中文](validation.md)
 
+## 2026-11-09 window icon fix (development preview)
+
+- Load the embedded named `IDI_ICON1`, assign large/small window icons and draw the same icon in the custom caption. Reload for DPI or UI size changes and release replaced resources.
+- MSVC Release build succeeded; CTest passed 2/2. `tests/window_icons.py` passed 46/46: actual hidden-window pixels match the ICO at 96/120/144/192 DPI, GDI/USER counts remain 24/27 after 66 appearance updates, and the plugin exits cleanly.
+- The installed WinShun host launched an isolated test plugin. Window handles, sizes and pixels passed; the captured caption displays the new icon.
+- **Full host shutdown verification failed; no formal release was made.** Both the installed and local development hosts exit with `0xC0000005`. The original unmodified plugin reproduces the same error; a host without external plugins exits normally. This establishes that the shutdown failure was not introduced by the icon change; its root cause remains undiagnosed.
+- The original full host scenario timed out while selecting a fixture window, so this run does not claim all previous interaction checks passed. Physical taskbar, Alt+Tab and cross-monitor DPI interaction remain unverified.
+- The new development package is for local icon inspection and has not passed full release acceptance. Restart the plugin after importing it; closing a resident window may only hide it.
+- Raw evidence is in the workspace at `WinShun/docs/validation/plugin-window-icons-fix-20261109/`.
+
 Date: November 8, 2026. The user tested and accepted the functionality and revised UI, then authorized a GitHub repository and `v0.1.0` tag. User feedback, automated results and coverage limits are distinguished below.
 
 ## 1. Problem
