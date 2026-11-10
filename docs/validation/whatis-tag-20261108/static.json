@@ -1,0 +1,9 @@
+{
+  "manifest_schema": true,
+  "schema_sha256": "75302f4cfd14fe13ba18144a090d69f5a51dafcd398d29bbdf8976758cd1e3e9",
+  "bilingual_docs": 12,
+  "local_doc_links": true,
+  "pe_machine": "x64",
+  "package_hash_and_contents": true,
+  "sha256": "af0c395f963e835a5ae78fac12f46ea32c2d42d09eec370bd732de7a3def81de"
+}

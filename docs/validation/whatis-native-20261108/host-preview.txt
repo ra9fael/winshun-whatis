@@ -1,0 +1,4 @@
+preparing
+making the application
+loading the font
+WARNING: QFileSystemWatcher: FindNextChangeNotification failed for "C:\Users\renfei\AppData\Local\Temp\WinShun-preview-73444aed\components"  (Access is denied.)

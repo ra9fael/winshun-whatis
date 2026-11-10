@@ -1,0 +1,425 @@
+{
+  "date": "2026-11-08",
+  "user_acceptance": "Functionality and revised UI accepted; repository and tag authorized. No itemized edge-case checklist supplied.",
+  "accepted_gcc_exe_sha256": "1eb4e39e901e0a4aebe74fe5c6f8f8ebf6e5049ec7ffa6fde8a3b66a67a30a57",
+  "msvc_exe_sha256": "af0c395f963e835a5ae78fac12f46ea32c2d42d09eec370bd732de7a3def81de",
+  "gcc_ctest": {
+    "passed": 2,
+    "total": 2
+  },
+  "gcc_desktop": {
+    "integration": {
+      "passed": 31,
+      "total": 31,
+      "checks": [
+        {
+          "name": "Actual HWND resolves to external fixture PID and executable",
+          "passed": true
+        },
+        {
+          "name": "Unicode window title is preserved",
+          "passed": true
+        },
+        {
+          "name": "Real process DACL denial retains PID without fabricated path",
+          "passed": true
+        },
+        {
+          "name": "Resident initialize responds",
+          "passed": true
+        },
+        {
+          "name": "Query returns stable pick item",
+          "passed": true
+        },
+        {
+          "name": "Query is side-effect free: no visible picker",
+          "passed": true
+        },
+        {
+          "name": "Initialize and query fit host timeout",
+          "passed": true
+        },
+        {
+          "name": "Pick action responds before user selection",
+          "passed": true
+        },
+        {
+          "name": "Temporary input shield created",
+          "passed": true
+        },
+        {
+          "name": "Input surface owns hit-test at fixture point",
+          "passed": true
+        },
+        {
+          "name": "Native selection resolves fixture EXE",
+          "passed": true
+        },
+        {
+          "name": "Directed selection leaves fixture button untouched",
+          "passed": true
+        },
+        {
+          "name": "Picker input shields removed after selection",
+          "passed": true
+        },
+        {
+          "name": "Details contain selected HWND and class",
+          "passed": true
+        },
+        {
+          "name": "Reveal requests host show_in_folder, never starts EXE",
+          "passed": true
+        },
+        {
+          "name": "Protocol remains responsive during pending host tool",
+          "passed": true
+        },
+        {
+          "name": "Host tool errors are visible",
+          "passed": true
+        },
+        {
+          "name": "Successful tool response restores reveal action",
+          "passed": true
+        },
+        {
+          "name": "Unanswered tool call times out and restores action",
+          "passed": true
+        },
+        {
+          "name": "Late tool response cannot overwrite timeout status",
+          "passed": true
+        },
+        {
+          "name": "Escape cancels and retains locked result",
+          "passed": true
+        },
+        {
+          "name": "Repeated cancellation does not grow process handles",
+          "passed": true
+        },
+        {
+          "name": "Host language and appearance changes reach native controls",
+          "passed": true
+        },
+        {
+          "name": "Language switch clears stale status text",
+          "passed": true
+        },
+        {
+          "name": "Drag and release selects actual external window",
+          "passed": true
+        },
+        {
+          "name": "Directed drag leaves fixture button untouched",
+          "passed": true
+        },
+        {
+          "name": "Closed target is labeled as a historical snapshot",
+          "passed": true
+        },
+        {
+          "name": "Access-denied result retains PID and error",
+          "passed": true
+        },
+        {
+          "name": "Access-denied result disables path actions",
+          "passed": true
+        },
+        {
+          "name": "Shutdown during picking exits cleanly",
+          "passed": true
+        },
+        {
+          "name": "Stdout contains protocol JSON only",
+          "passed": true
+        }
+      ]
+    },
+    "host-smoke": {
+      "passed": 12,
+      "total": 12,
+      "checks": [
+        {
+          "name": "Production host opened its launcher",
+          "passed": true
+        },
+        {
+          "name": "Query and Enter start the real installed plugin",
+          "passed": true
+        },
+        {
+          "name": "Host uses its private preview profile",
+          "passed": true
+        },
+        {
+          "name": "Installed executable matches this build",
+          "passed": true
+        },
+        {
+          "name": "Sandboxed plugin resolves actual fixture EXE",
+          "passed": true
+        },
+        {
+          "name": "Result includes actual fixture PID",
+          "passed": true
+        },
+        {
+          "name": "Native selection removed all input shields",
+          "passed": true
+        },
+        {
+          "name": "Second host action reuses resident process and cancels cleanly",
+          "passed": true
+        },
+        {
+          "name": "Real host tool roundtrip returns a missing-file error",
+          "passed": true
+        },
+        {
+          "name": "Isolated production host exits successfully",
+          "passed": true
+        },
+        {
+          "name": "Host shutdown exits the plugin and removes its windows",
+          "passed": true
+        },
+        {
+          "name": "Task-owned temporary profile is cleaned after host shutdown",
+          "passed": true
+        }
+      ]
+    },
+    "visual": {
+      "passed": 52,
+      "total": 52,
+      "checks": [
+        {
+          "name": "Empty state hides result fields and actions",
+          "passed": true
+        },
+        {
+          "name": "Custom caption exposes a draggable area",
+          "passed": true
+        },
+        {
+          "name": "Default result card is compact",
+          "passed": true
+        },
+        {
+          "name": "Result keeps the full selectable path",
+          "passed": true
+        },
+        {
+          "name": "Details expand the card without losing primary actions",
+          "passed": true
+        },
+        {
+          "name": "result-dark: control 100 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark: control 101 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark: control 102 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark: control 103 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark: control 200 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark: control 201 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark: control 202 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark: control 203 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark: control 207 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark: control 208 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark: control 105 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark-en: control 100 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark-en: control 101 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark-en: control 102 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark-en: control 103 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark-en: control 200 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark-en: control 201 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark-en: control 202 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark-en: control 203 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark-en: control 207 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark-en: control 208 fits",
+          "passed": true
+        },
+        {
+          "name": "result-dark-en: control 105 fits",
+          "passed": true
+        },
+        {
+          "name": "roomy-square-en: control 100 fits",
+          "passed": true
+        },
+        {
+          "name": "roomy-square-en: control 101 fits",
+          "passed": true
+        },
+        {
+          "name": "roomy-square-en: control 102 fits",
+          "passed": true
+        },
+        {
+          "name": "roomy-square-en: control 103 fits",
+          "passed": true
+        },
+        {
+          "name": "roomy-square-en: control 200 fits",
+          "passed": true
+        },
+        {
+          "name": "roomy-square-en: control 201 fits",
+          "passed": true
+        },
+        {
+          "name": "roomy-square-en: control 202 fits",
+          "passed": true
+        },
+        {
+          "name": "roomy-square-en: control 203 fits",
+          "passed": true
+        },
+        {
+          "name": "roomy-square-en: control 207 fits",
+          "passed": true
+        },
+        {
+          "name": "roomy-square-en: control 208 fits",
+          "passed": true
+        },
+        {
+          "name": "roomy-square-en: control 105 fits",
+          "passed": true
+        },
+        {
+          "name": "compact-zh: control 100 fits",
+          "passed": true
+        },
+        {
+          "name": "compact-zh: control 101 fits",
+          "passed": true
+        },
+        {
+          "name": "compact-zh: control 102 fits",
+          "passed": true
+        },
+        {
+          "name": "compact-zh: control 103 fits",
+          "passed": true
+        },
+        {
+          "name": "compact-zh: control 200 fits",
+          "passed": true
+        },
+        {
+          "name": "compact-zh: control 201 fits",
+          "passed": true
+        },
+        {
+          "name": "compact-zh: control 202 fits",
+          "passed": true
+        },
+        {
+          "name": "compact-zh: control 203 fits",
+          "passed": true
+        },
+        {
+          "name": "compact-zh: control 207 fits",
+          "passed": true
+        },
+        {
+          "name": "compact-zh: control 208 fits",
+          "passed": true
+        },
+        {
+          "name": "compact-zh: control 105 fits",
+          "passed": true
+        },
+        {
+          "name": "Synthetic 150-percent DPI message scales native layout",
+          "passed": true
+        },
+        {
+          "name": "Custom close button hides the card",
+          "passed": true
+        },
+        {
+          "name": "Visual-state process exits cleanly",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "msvc": {
+    "compiler": "19.51.36260.0",
+    "build": "Release",
+    "ctest_passed": 2,
+    "ctest_total": 2,
+    "desktop_revalidation": "Not completed: SetCursorPos returned zero and did not move the cursor; accepted GCC binary encountered the same environment limitation."
+  },
+  "physical_input": "Not established by directed-message automation",
+  "unverified": [
+    "Physical mixed-DPI monitors",
+    "Protected/UIAccess/secure desktop cases",
+    "Screen readers",
+    "Clipboard and successful Explorer actions by automation",
+    "Long-term resource and performance calibration"
+  ]
+}

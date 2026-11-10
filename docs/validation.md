@@ -10,7 +10,7 @@
 - **完整宿主退出验证未通过，未正式发布。** 已安装版和本地开发版宿主退出时出现 `0xC0000005`。用原来未修复的插件复测得到相同错误；不加载外部插件的宿主退出正常。此结果确认退出失败并非本次图标修改引入，退出崩溃原因尚未定位。
 - 原完整宿主测试在选取测试窗口步骤超时，因此本次没有宣称旧版所有交互测试通过。物理任务栏、Alt+Tab、跨显示器 DPI 交互也尚未人工验收。
 - 新开发包可用于本地复查图标，不能当作已完成发布验收的正式版。重新导入后需重启插件进程，常驻窗口仅关闭可能不会退出进程。
-- 原始证据保存在工作台 `WinShun/docs/validation/plugin-window-icons-fix-20261109/`。
+- 原始证据保存在工作台 `docs/validation/plugin-window-icons-fix-20261109/`。
 
 日期：2026-11-08。用户实测后确认功能与改版界面合适，并授权建立 GitHub 仓库和 `v0.1.0` 标签。本文件区分用户反馈、自动测试和未覆盖边界。
 
@@ -37,7 +37,7 @@
 | MSVC 19.51 / Release | 编译成功，CTest 2/2 通过；桌面复验受上述鼠标环境限制，未记为通过 |
 | 用户验收 | 用户确认已测试且合适，授权仓库和标签；没有逐项设备与边界清单 |
 
-机器可读摘要及编译产物指纹见 [acceptance.json](verification/acceptance.json)；精选截图见 [界面截图](screenshots.md)。原始工作台证据保存在 `WinShun/docs/validation/whatis-ui-20261108/`、`whatis-native-20261108/` 及本轮 `whatis-tag-20261108/`。独立仓库 CI 的具体提交结果以 GitHub Actions 为准，产物含清单、文档、PE 架构、包内容和 SHA256 校验结果。
+机器可读摘要及编译产物指纹见 [acceptance.json](verification/acceptance.json)；精选截图见 [界面截图](screenshots.md)。原始工作台证据保存在 `docs/validation/whatis-ui-20261108/`、`whatis-native-20261108/` 及本轮 `whatis-tag-20261108/`。独立仓库 CI 的具体提交结果以 GitHub Actions 为准，产物含清单、文档、PE 架构、包内容和 SHA256 校验结果。
 
 自动化仅向自建测试窗口发送定向消息，不写剪贴板、不执行 Explorer 成功动作。测试结束关闭自建进程并尝试恢复鼠标；当前桌面拒绝鼠标移动时原位置也未改变。未结束或修改用户运行中的 Win顺及其他插件。旧轮次未完成清理的开发目录保留；本轮可再生成文件放在忽略的 `build/tag-msvc/`，打包物放在 `dist/tag-v0.1.0/`。
 

@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    {
+      "name": "Production host opened its launcher",
+      "passed": true,
+      "detail": [
+        {
+          "active": true,
+          "class": "Main_QMLTYPE_0",
+          "color": "#00000000",
+          "dpr": 1,
+          "foreground": true,
+          "h": 106,
+          "hwnd": "6429276",
+          "object": "",
+          "title": "Win顺",
+          "w": 760,
+          "x": 580,
+          "y": 206
+        }
+      ]
+    },
+    {
+      "name": "Query and Enter start the real installed plugin",
+      "passed": true,
+      "detail": {
+        "class": "WinShun.WhatIs.Window",
+        "created": "134386092736373705",
+        "error": 0,
+        "exe": "whatis.exe",
+        "host": false,
+        "hwnd": "0xE81DC6",
+        "path": "C:\\Users\\renfei\\AppData\\Local\\Temp\\WinShun-preview-aee9a19a\\plugins\\ra9fael.whatis\\whatis.exe",
+        "pid": 25256,
+        "rootHwnd": "0xE81DC6",
+        "rootPid": 25256,
+        "stale": false,
+        "title": "WhatIsInput"
+      }
+    },
+    {
+      "name": "Host uses its private preview profile",
+      "passed": true,
+      "detail": "C:\\Users\\renfei\\AppData\\Local\\Temp\\WinShun-preview-aee9a19a"
+    },
+    {
+      "name": "Installed executable matches this build",
+      "passed": true
+    },
+    {
+      "name": "Sandboxed plugin resolves actual fixture EXE",
+      "passed": true
+    },
+    {
+      "name": "Result includes actual fixture PID",
+      "passed": true
+    },
+    {
+      "name": "Native selection removed all input shields",
+      "passed": true
+    },
+    {
+      "name": "Second host action reuses resident process and cancels cleanly",
+      "passed": true
+    },
+    {
+      "name": "Real host tool roundtrip returns a missing-file error",
+      "passed": true,
+      "detail": "无法定位文件：There is no such file or folder: D:\\dev\\github\\winshun-dev\\ra9fael.whatis\\build\\host-target\\whatis_fixture.exe"
+    },
+    {
+      "name": "Isolated production host exits successfully",
+      "passed": true
+    },
+    {
+      "name": "Host shutdown exits the plugin and removes its windows",
+      "passed": true
+    },
+    {
+      "name": "Task-owned temporary profile is cleaned after host shutdown",
+      "passed": true
+    }
+  ],
+  "host": "D:\\dev\\github\\winshun-dev\\WinShun\\build\\debug\\WinShun.exe",
+  "host_pid": 82116,
+  "plugin_pid": 25256,
+  "profile": "C:\\Users\\renfei\\AppData\\Local\\Temp\\WinShun-preview-aee9a19a",
+  "sha256": "1eb4e39e901e0a4aebe74fe5c6f8f8ebf6e5049ec7ffa6fde8a3b66a67a30a57",
+  "input": "Directed WM messages; no global key/button input",
+  "clipboard": "Not modified",
+  "unverified": [
+    "Physical input capture",
+    "Real clipboard copy",
+    "Explorer reveal via real host"
+  ],
+  "host_removed_profile": false
+}

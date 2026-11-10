@@ -1,0 +1,35 @@
+Start testing: Nov 08 18:04 China Standard Time
+----------------------------------------------------------
+1/2 Testing: whatis_core
+1/2 Test: whatis_core
+Command: "D:/dev/github/winshun-dev/ra9fael.whatis/build/whatis_core_tests.exe"
+Directory: D:/dev/github/winshun-dev/ra9fael.whatis/build
+"whatis_core" start time: Nov 08 18:04 China Standard Time
+Output:
+----------------------------------------------------------
+PASS 22 core checks
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"whatis_core" end time: Nov 08 18:04 China Standard Time
+"whatis_core" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: whatis_native
+2/2 Test: whatis_native
+Command: "D:/dev/github/winshun-dev/ra9fael.whatis/build/whatis_native_tests.exe"
+Directory: D:/dev/github/winshun-dev/ra9fael.whatis/build
+"whatis_native" start time: Nov 08 18:04 China Standard Time
+Output:
+----------------------------------------------------------
+PASS native path, identity, Unicode and closed-window checks
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"whatis_native" end time: Nov 08 18:04 China Standard Time
+"whatis_native" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 08 18:04 China Standard Time

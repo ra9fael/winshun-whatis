@@ -1,0 +1,9 @@
+{
+  "tag": "v0.1.0",
+  "commit": "5457727a3cce26fe551363d456f5300f94832975",
+  "package_sha256": "e43f7fbff186ac52ca5d148dd06d83437ef51d6aa11899134c94073b11c3068a",
+  "exe_sha256": "41bbd268202e51b2b39ec68069881d5500e5b68a82209fffebe452b42b275a7b",
+  "archive_crc": true,
+  "all_packaged_sources_match_commit": true,
+  "checksum_file": true
+}

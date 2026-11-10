@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-08",
+  "browser": "Microsoft Edge (headless)",
+  "browserVersion": "156.0.4314.58",
+  "platform": "win32",
+  "checks": [
+    {
+      "name": "Click starts selection",
+      "passed": true
+    },
+    {
+      "name": "Hover previews Code.exe",
+      "passed": true
+    },
+    {
+      "name": "Preview actions disabled",
+      "passed": true
+    },
+    {
+      "name": "Click locks and enables actions",
+      "passed": true
+    },
+    {
+      "name": "Reveal preview selects executable",
+      "passed": true
+    },
+    {
+      "name": "Clipboard denial shows selectable fallback",
+      "passed": true
+    },
+    {
+      "name": "Cancel restores prior locked result",
+      "passed": true
+    },
+    {
+      "name": "Drag and release locks popup",
+      "passed": true
+    },
+    {
+      "name": "Details expose HWND",
+      "passed": true
+    },
+    {
+      "name": "Denied sample disables path actions",
+      "passed": true
+    },
+    {
+      "name": "Denied sample retains PID and diagnosis",
+      "passed": true
+    },
+    {
+      "name": "Host sample preserves host executable and uncertainty",
+      "passed": true
+    },
+    {
+      "name": "Keyboard starts selection",
+      "passed": true
+    },
+    {
+      "name": "Keyboard can lock a window",
+      "passed": true
+    },
+    {
+      "name": "Escape during drag cannot accidentally commit",
+      "passed": true
+    },
+    {
+      "name": "Successful clipboard promise reports success",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow at 320–1140 px",
+      "passed": true
+    },
+    {
+      "name": "No browser runtime errors",
+      "passed": true
+    },
+    {
+      "name": "Changing selection closes an old action preview",
+      "passed": true
+    },
+    {
+      "name": "Fragment works inside sandboxed iframe",
+      "passed": true
+    },
+    {
+      "name": "Sandbox clipboard fallback remains usable",
+      "passed": true
+    },
+    {
+      "name": "Fragment script parses without errors",
+      "passed": true
+    },
+    {
+      "name": "Bilingual design contains mutual links and 11 required sections",
+      "passed": true
+    }
+  ],
+  "layouts": [
+    {
+      "width": 1140,
+      "documentWidth": 1140,
+      "appWidth": 1080
+    },
+    {
+      "width": 1024,
+      "documentWidth": 1024,
+      "appWidth": 976
+    },
+    {
+      "width": 760,
+      "documentWidth": 760,
+      "appWidth": 712
+    },
+    {
+      "width": 600,
+      "documentWidth": 600,
+      "appWidth": 584
+    },
+    {
+      "width": 375,
+      "documentWidth": 375,
+      "appWidth": 359
+    },
+    {
+      "width": 320,
+      "documentWidth": 320,
+      "appWidth": 304
+    }
+  ],
+  "browserErrors": [],
+  "clipboard": "Success and rejection tested with injected adapters; real system clipboard not modified. Sandboxed iframe denial fallback tested separately.",
+  "native": "Not implemented or tested",
+  "sha256": {
+    "fragment": "9b89557cf12563f646963508cc1954bf7a9cb4f21a51c86948e346337f917fee",
+    "standalone": "3e10a7967c2453ab6efbf36c266a223189fff7470c73af5e5249099b324a06a4"
+  }
+}

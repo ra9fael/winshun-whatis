@@ -10,7 +10,7 @@
 - **Full host shutdown verification failed; no formal release was made.** Both the installed and local development hosts exit with `0xC0000005`. The original unmodified plugin reproduces the same error; a host without external plugins exits normally. This establishes that the shutdown failure was not introduced by the icon change; its root cause remains undiagnosed.
 - The original full host scenario timed out while selecting a fixture window, so this run does not claim all previous interaction checks passed. Physical taskbar, Alt+Tab and cross-monitor DPI interaction remain unverified.
 - The new development package is for local icon inspection and has not passed full release acceptance. Restart the plugin after importing it; closing a resident window may only hide it.
-- Raw evidence is in the workspace at `WinShun/docs/validation/plugin-window-icons-fix-20261109/`.
+- Raw evidence is in the workspace at `docs/validation/plugin-window-icons-fix-20261109/`.
 
 Date: November 8, 2026. The user tested and accepted the functionality and revised UI, then authorized a GitHub repository and `v0.1.0` tag. User feedback, automated results and coverage limits are distinguished below.
 
@@ -37,7 +37,7 @@ See [implementation](implementation.en.md) for the plugin, state machine and nat
 | MSVC 19.51 / Release | Compilation and CTest 2/2 passed; desktop revalidation was limited by the cursor environment above and is not counted as passing |
 | User acceptance | The user reported successful testing and approved the repository/tag; no device or edge-case checklist was supplied |
 
-See [acceptance.json](verification/acceptance.json) for a machine-readable summary and binary fingerprints, and [screenshots](screenshots.en.md) for selected images. Original workspace evidence is under `WinShun/docs/validation/whatis-ui-20261108/`, `whatis-native-20261108/` and this iteration's `whatis-tag-20261108/`. GitHub Actions records the result for each standalone repository commit. Artifacts include manifest, docs, PE architecture, package content and SHA256 checks.
+See [acceptance.json](verification/acceptance.json) for a machine-readable summary and binary fingerprints, and [screenshots](screenshots.en.md) for selected images. Original workspace evidence is under `docs/validation/whatis-ui-20261108/`, `whatis-native-20261108/` and this iteration's `whatis-tag-20261108/`. GitHub Actions records the result for each standalone repository commit. Artifacts include manifest, docs, PE architecture, package content and SHA256 checks.
 
 Automation sends directed messages only to owned fixtures. It does not write the clipboard or exercise successful Explorer actions. Test processes are stopped afterward and pointer restoration is attempted; when this desktop rejects movement the original pointer is unchanged. The user's Winshun and other plugins were not stopped or modified. Development directories whose cleanup was not completed in earlier iterations remain. This iteration keeps regenerable files in ignored `build/tag-msvc/` and packages in `dist/tag-v0.1.0/`.
 

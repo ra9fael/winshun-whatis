@@ -1,0 +1,217 @@
+{
+  "checks": [
+    {
+      "name": "Empty state hides result fields and actions",
+      "passed": true
+    },
+    {
+      "name": "Custom caption exposes a draggable area",
+      "passed": true
+    },
+    {
+      "name": "Default result card is compact",
+      "passed": true,
+      "detail": {
+        "height": 388
+      }
+    },
+    {
+      "name": "Result keeps the full selectable path",
+      "passed": true
+    },
+    {
+      "name": "Details expand the card without losing primary actions",
+      "passed": true
+    },
+    {
+      "name": "result-dark: control 100 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark: control 101 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark: control 102 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark: control 103 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark: control 200 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark: control 201 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark: control 202 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark: control 203 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark: control 207 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark: control 208 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark: control 105 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark-en: control 100 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark-en: control 101 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark-en: control 102 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark-en: control 103 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark-en: control 200 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark-en: control 201 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark-en: control 202 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark-en: control 203 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark-en: control 207 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark-en: control 208 fits",
+      "passed": true
+    },
+    {
+      "name": "result-dark-en: control 105 fits",
+      "passed": true
+    },
+    {
+      "name": "roomy-square-en: control 100 fits",
+      "passed": true
+    },
+    {
+      "name": "roomy-square-en: control 101 fits",
+      "passed": true
+    },
+    {
+      "name": "roomy-square-en: control 102 fits",
+      "passed": true
+    },
+    {
+      "name": "roomy-square-en: control 103 fits",
+      "passed": true
+    },
+    {
+      "name": "roomy-square-en: control 200 fits",
+      "passed": true
+    },
+    {
+      "name": "roomy-square-en: control 201 fits",
+      "passed": true
+    },
+    {
+      "name": "roomy-square-en: control 202 fits",
+      "passed": true
+    },
+    {
+      "name": "roomy-square-en: control 203 fits",
+      "passed": true
+    },
+    {
+      "name": "roomy-square-en: control 207 fits",
+      "passed": true
+    },
+    {
+      "name": "roomy-square-en: control 208 fits",
+      "passed": true
+    },
+    {
+      "name": "roomy-square-en: control 105 fits",
+      "passed": true
+    },
+    {
+      "name": "compact-zh: control 100 fits",
+      "passed": true
+    },
+    {
+      "name": "compact-zh: control 101 fits",
+      "passed": true
+    },
+    {
+      "name": "compact-zh: control 102 fits",
+      "passed": true
+    },
+    {
+      "name": "compact-zh: control 103 fits",
+      "passed": true
+    },
+    {
+      "name": "compact-zh: control 200 fits",
+      "passed": true
+    },
+    {
+      "name": "compact-zh: control 201 fits",
+      "passed": true
+    },
+    {
+      "name": "compact-zh: control 202 fits",
+      "passed": true
+    },
+    {
+      "name": "compact-zh: control 203 fits",
+      "passed": true
+    },
+    {
+      "name": "compact-zh: control 207 fits",
+      "passed": true
+    },
+    {
+      "name": "compact-zh: control 208 fits",
+      "passed": true
+    },
+    {
+      "name": "compact-zh: control 105 fits",
+      "passed": true
+    },
+    {
+      "name": "Synthetic 150-percent DPI message scales native layout",
+      "passed": true
+    },
+    {
+      "name": "Custom close button hides the card",
+      "passed": true
+    },
+    {
+      "name": "Visual-state process exits cleanly",
+      "passed": true
+    }
+  ],
+  "exe_sha256": "1eb4e39e901e0a4aebe74fe5c6f8f8ebf6e5049ec7ffa6fde8a3b66a67a30a57",
+  "input": "Directed window messages; physical mouse and mixed-DPI monitors not covered"
+}

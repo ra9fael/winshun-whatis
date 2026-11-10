@@ -1,0 +1,183 @@
+{
+  "date": "2026-11-08",
+  "checks": [
+    {
+      "name": "Actual HWND resolves to external fixture PID and executable",
+      "passed": true,
+      "detail": {
+        "class": "WhatIsTestFixture",
+        "created": "134386092445601828",
+        "error": 0,
+        "exe": "whatis_fixture.exe",
+        "host": false,
+        "hwnd": "0x23D167C",
+        "path": "D:\\dev\\github\\winshun-dev\\ra9fael.whatis\\build\\whatis_fixture.exe",
+        "pid": 14900,
+        "rootHwnd": "0x23D167C",
+        "rootPid": 14900,
+        "stale": false,
+        "title": "窗口识别测试 · Test fixture"
+      }
+    },
+    {
+      "name": "Unicode window title is preserved",
+      "passed": true
+    },
+    {
+      "name": "Real process DACL denial retains PID without fabricated path",
+      "passed": true,
+      "detail": {
+        "class": "WhatIsTestFixture",
+        "created": "0",
+        "error": 5,
+        "exe": "",
+        "host": false,
+        "hwnd": "0xFD0DBA",
+        "path": "",
+        "pid": 75900,
+        "rootHwnd": "0xFD0DBA",
+        "rootPid": 75900,
+        "stale": false,
+        "title": "窗口识别测试 · Test fixture"
+      }
+    },
+    {
+      "name": "Resident initialize responds",
+      "passed": true
+    },
+    {
+      "name": "Query returns stable pick item",
+      "passed": true
+    },
+    {
+      "name": "Query is side-effect free: no visible picker",
+      "passed": true
+    },
+    {
+      "name": "Initialize and query fit host timeout",
+      "passed": true
+    },
+    {
+      "name": "Pick action responds before user selection",
+      "passed": true
+    },
+    {
+      "name": "Temporary input shield created",
+      "passed": true
+    },
+    {
+      "name": "Input surface owns hit-test at fixture point",
+      "passed": true
+    },
+    {
+      "name": "Native selection resolves fixture EXE",
+      "passed": true
+    },
+    {
+      "name": "Directed selection leaves fixture button untouched",
+      "passed": true
+    },
+    {
+      "name": "Picker input shields removed after selection",
+      "passed": true
+    },
+    {
+      "name": "Details contain selected HWND and class",
+      "passed": true
+    },
+    {
+      "name": "Reveal requests host show_in_folder, never starts EXE",
+      "passed": true,
+      "detail": {
+        "id": "whatis-tool-1",
+        "jsonrpc": "2.0",
+        "method": "winshun/tool",
+        "params": {
+          "arguments": {
+            "path": "D:\\dev\\github\\winshun-dev\\ra9fael.whatis\\build\\whatis_fixture.exe"
+          },
+          "name": "show_in_folder"
+        }
+      }
+    },
+    {
+      "name": "Protocol remains responsive during pending host tool",
+      "passed": true
+    },
+    {
+      "name": "Host tool errors are visible",
+      "passed": true
+    },
+    {
+      "name": "Successful tool response restores reveal action",
+      "passed": true
+    },
+    {
+      "name": "Unanswered tool call times out and restores action",
+      "passed": true
+    },
+    {
+      "name": "Late tool response cannot overwrite timeout status",
+      "passed": true
+    },
+    {
+      "name": "Escape cancels and retains locked result",
+      "passed": true
+    },
+    {
+      "name": "Repeated cancellation does not grow process handles",
+      "passed": true,
+      "detail": {
+        "before": 175,
+        "after": 175,
+        "cycles": 12
+      }
+    },
+    {
+      "name": "Host language and appearance changes reach native controls",
+      "passed": true
+    },
+    {
+      "name": "Language switch clears stale status text",
+      "passed": true
+    },
+    {
+      "name": "Drag and release selects actual external window",
+      "passed": true
+    },
+    {
+      "name": "Directed drag leaves fixture button untouched",
+      "passed": true
+    },
+    {
+      "name": "Closed target is labeled as a historical snapshot",
+      "passed": true
+    },
+    {
+      "name": "Access-denied result retains PID and error",
+      "passed": true
+    },
+    {
+      "name": "Access-denied result disables path actions",
+      "passed": true
+    },
+    {
+      "name": "Shutdown during picking exits cleanly",
+      "passed": true
+    },
+    {
+      "name": "Stdout contains protocol JSON only",
+      "passed": true
+    }
+  ],
+  "sha256": "1eb4e39e901e0a4aebe74fe5c6f8f8ebf6e5049ec7ffa6fde8a3b66a67a30a57",
+  "clipboard": "Not modified",
+  "native_input": "Directed window messages; real OS hit-testing checked. Physical input isolation and capture not established. SendInput accepted events but test fixture received none on this desktop.",
+  "unverified": [
+    "Physical click isolation and mouse capture",
+    "Administrative / UIAccess surfaces",
+    "Physical mixed-DPI monitors",
+    "Screen readers",
+    "Protected processes beyond explicit DACL denial"
+  ]
+}
